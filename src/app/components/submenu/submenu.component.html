@@ -1,0 +1,130 @@
+<div class="menu__submenu" aria-labelledby="submenu-platform">
+    <div class="menu__submenu-container">
+
+        <div class="menu__submenu-column">
+            <h4 class="menu__submenu-title">
+                <img src="./assets/images/icon-navbar/platform.svg" alt="Platform icon" role="img" aria-hidden="true" />
+                Platform
+            </h4>
+            <app-submenuitem [subItem]="submenuItems1"></app-submenuitem>
+
+        </div>
+
+        <div class="menu__submenu-column">
+            <h4 class="menu__submenu-title">
+                <img src="./assets/images/icon-navbar/usecase.svg" alt="Use Cases Icon" aria-hidden="true" />
+                Use Cases
+            </h4>
+
+            <app-submenuitem [subItem]="marketingMenuItems"></app-submenuitem>
+
+        </div>
+
+
+        <div class="menu__submenu-column menu__submenu-column--last">
+            <span class="text-active" aria-label="New feature">New</span>
+            <h4>Watch how customers use your product</h4>
+
+            <app-submenuitem [subItem]="sessionMenuItems"></app-submenuitem>
+
+            <img class="menu__submenu-image" src="./assets/images/img_nav001.webp"
+                alt="Screenshot of customer usage analytics dashboard" />
+        </div>
+
+    </div>
+</div>
+
+<div class="menu__submenu">
+    <div class="menu__submenu-container">
+        <div class="menu__submenu-column">
+
+            <h4 class="menu__submenu-title">
+                <img src="./assets/images/icon-navbar/teams.svg" alt="Icon representing teams">
+                Teams
+            </h4>
+
+
+            <app-submenuitem [subItem]="teamMenuItems"></app-submenuitem>
+
+        </div>
+
+        <section class="menu__submenu-column" aria-labelledby="industries-title">
+            <h4 id="industries-title" class="menu__submenu-title">
+                <img src="./assets/images/icon-navbar/industries.svg" alt="Icon representing industries">
+                Industries
+            </h4>
+
+            <nav>
+                <app-submenuitem [subItem]="industryMenuItems"></app-submenuitem>
+            </nav>
+        </section>
+
+
+        <div class="menu__submenu-column">
+            <h4 class="menu__submenu-title"><img src="./assets/images/icon-navbar/bussiness.svg" alt="Business
+        Size">Business
+                Size</h4>
+
+            <app-submenuitem [subItem]="businessMenuItems"></app-submenuitem>
+        </div>
+
+        <div class="menu__submenu-column menu__submenu-column--last">
+            <h4 class="text-active">2025 State of Product Analytics</h4>
+            <p><b>Understand critical trends <br>Media & Entertainment</b></p>
+            <div class="menu__submenu-item">
+                <a href="#">Download Our Free Report <img src="./assets/images/arrow-narrow-right-black.svg"> </a>
+            </div>
+            <img class="menu__submenu-image" src="./assets/images/solution_nav.webp" alt="Download Our Free Report">
+        </div>
+    </div>
+</div>
+
+<div class="menu__submenu">
+    <div class="menu__submenu-container">
+        <div class="menu__submenu-column">
+            <h4 class="menu__submenu-title">
+                <img src="./assets/images/icon-navbar/mixpanel.svg" alt=" Using Mixpanel">
+                Using Mixpanel
+            </h4>
+
+            <app-submenuitem [subItem]="supportMenuItems"></app-submenuitem>
+        </div>
+
+        <div class="menu__submenu-column">
+            <h4 class="menu__submenu-title"><img src="./assets/images/icon-navbar/community.svg" alt="">Community</h4>
+
+            <app-submenuitem [subItem]="growthMenuItems"></app-submenuitem>
+        </div>
+
+        <div class="menu__submenu-column">
+            <h4 class="menu__submenu-title">
+                <img src="./assets/images/icon-navbar/partnerships.svg" alt="Partnerships">
+                Partnerships
+            </h4>
+
+            <app-submenuitem [subItem]="partnerMenuItems"></app-submenuitem>
+        </div>
+
+        <div class="menu__submenu-column menu__submenu-column--last">
+            <div class="background-red">
+                <h6 class="text-ligth "><span class="background-red-light">HOW TO BUILD</span></h6>
+                <h5 class="text-ligth"><b>Sprig’s Kevin Mandich on a decade of <br>building with ML
+                        and
+                        AI</b></h5>
+                <div class="menu__submenu-item">
+                    <a class="menu__submenu-item text-ligth" href="#">Read Article </a>
+                </div>
+            </div>
+            <div class="background-green ">
+                <h5 class="text-ligth"><span class="background-green-light">BUILDERS</span></h5>
+                <h5 class="text-ligth"><b>Product Analytics and the data <br>warehouse: A long road
+                        to a
+                        perfect
+                        <br>pairing</b></h5>
+                <div class="menu__submenu-item">
+                    <a class="menu__submenu-item text-ligth" href="#">Read Article </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

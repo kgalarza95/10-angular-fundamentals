@@ -1,0 +1,9 @@
+@for (item of subItem(); track $index) {
+<div class="menu__submenu-item">
+    <a href="#">
+        {{ item.getName() }}
+        <img src="{{ item.getPathImg() }}" alt="{{ item.getAlt() }}" role="presentation" aria-hidden="true" />
+    </a>
+    <p>{{ item.getSubTitle() }}</p>
+</div>
+}

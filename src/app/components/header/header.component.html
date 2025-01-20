@@ -1,14 +1,40 @@
-<header class="header">
-  <nav>
-    <app-menu />
-  </nav>
-  <div class="header__actions">
-    <a class="header__link" href="#">Sign In</a>
-    <button class="header__button">
-      <span>Get started</span>
-      <i aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" class="main-nav__link__icon"><g fill="none" fill-rule="evenodd" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="m16 11-4 4-4-4M12 13.5v-9M4 20h16"></path></g></svg>
-      </i>
-    </button>
-  </div>
+<header>
+    <nav class="navbar" role="navigation">
+        <div class="navbar__container">
+
+            <a class="navbar__logo" href="#" aria-label="Inicio">
+                <img src="./assets/images/logo.svg" alt="Logo de la empresa">
+            </a>
+
+            <menu class="menu" role="menu">
+                <li class="menu-item--dropdown" role="menuitem">
+                    <a href="#" aria-haspopup="true" aria-expanded="false" tabindex="0">Platform2
+                        <i><img src="./assets/images/chevron.svg" alt="Chevron para Platform"></i>
+                    </a>
+                </li>
+                <li class="menu-item--dropdown" role="menuitem">
+                    <a href="#" aria-haspopup="true" aria-expanded="false" tabindex="0">Solutions
+                        <i><img src="./assets/images/chevron.svg" alt="Chevron para Solutions"></i>
+                    </a>
+                </li>
+                <li class="menu-item--dropdown" role="menuitem">
+                    <a href="#" aria-haspopup="true" aria-expanded="false" tabindex="0">Resources
+                        <i><img src="./assets/images/chevron.svg" alt="Chevron para Resources"></i>
+                    </a>
+                </li> 
+
+                <app-submenu></app-submenu>
+
+
+                
+                <a href="#">Pricing</a>
+            </menu>
+        </div>
+
+        <div class="navbar__actions">
+            <a class="button button--text" href="#" aria-label="Iniciar sesión">Login</a>
+            <a class="button button--outline" href="#" aria-label="Contactar ventas">Contact Sales</a>
+            <a class="button button--solid" href="#" aria-label="Empezar gratis">Get Started Free</a>
+        </div>
+    </nav>
 </header>

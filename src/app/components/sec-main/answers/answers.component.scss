@@ -1,0 +1,49 @@
+@use '../../ui/styles/variables.scss' as variables;
+@use '../../ui/styles/mixins.scss' as mixins;
+
+
+
+
+
+
+
+
+/*************************answers-section*************************/
+.get-answers-section {
+    background-color: variables.$background-color;
+    padding: 2rem;
+    @include mixins.flex-commons;
+    justify-content: center;
+    margin-bottom: 2rem;
+    position: relative;
+
+
+    &__content {
+        text-align: center;
+        background-color: white;
+        padding: 3rem;
+        border-radius: 15px;
+        position: relative;
+        width: 80%;
+        max-width: 1200px;
+        height: auto;
+        margin: 0 auto;
+        z-index: 1;
+        border: 10px solid #f8f5f5;
+
+    }
+
+    &__title {
+        font-family: variables.$font-primary;
+        font-size: 2.5rem;
+        font-weight: 600;
+        color: variables.$letter-color;
+        margin-bottom: 1.5rem;
+    }
+
+    &__actions {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+    }
+}

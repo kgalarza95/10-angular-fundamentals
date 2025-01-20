@@ -1,0 +1,30 @@
+
+@mixin button-styles($bg-color, $text-color, $border, $hover-bg-color: null, $hover-text-color: null, $hover-border-radius: 8px) {
+    background-color: $bg-color;
+    color: $text-color;
+    border: $border;
+
+    &:hover {
+        background-color: if($hover-bg-color, $hover-bg-color, $bg-color);
+        color: if($hover-text-color, $hover-text-color, $text-color);
+        border-radius: $hover-border-radius;
+    }
+}
+
+
+@mixin transition($properties, $duration: 0.3s, $timing-function: ease) {
+    transition: $properties $duration $timing-function;
+}
+
+
+@mixin flex-commons($display: flex, $align-items: center) {
+    display: $display;
+    align-items: $align-items;
+}
+
+@mixin flex-column-center($gap: 0) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: $gap;
+}

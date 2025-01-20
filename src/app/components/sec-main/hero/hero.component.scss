@@ -1,0 +1,71 @@
+@use '../../ui/styles/variables.scss' as variables;
+@use '../../ui/styles/mixins.scss' as mixins;
+
+
+/*************************Sección Hero*************************/
+.hero {
+    @include mixins.flex-commons;
+    @include mixins.flex-column-center(30px);
+    padding: 30px 180px;
+    position: relative;
+
+    &__content {
+        max-width: 800px;
+        text-align: center;
+        margin-top: 20px;
+        z-index: 1;
+    }
+
+    &__title {
+        font-size: 4rem;
+        margin-bottom: 20px;
+        font-family: variables.$font-primary;
+        font-weight: 450;
+    }
+
+    &__description {
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+    }
+
+    &__buttons {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin-top: 20px;
+
+        & a {
+            font-family: variables.$font-primary;
+            font-weight: 500;
+        }
+    }
+
+    &__image {
+        margin-top: 80px;
+        @include mixins.flex-commons;
+        justify-content: center;
+        width: 100%;
+        z-index: 0;
+        position: relative;
+
+        & img.image__fondo {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 110%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 15px;
+        }
+
+        & img.image__principal {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            height: auto;
+        }
+    }
+
+
+
+}

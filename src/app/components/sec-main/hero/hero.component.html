@@ -1,0 +1,32 @@
+<section class="hero" aria-labelledby="hero-title">
+    <div class="hero__content">
+
+        @if (isValidated) {
+        <h1 id="hero-title" class="hero__title">
+            Turn data into decisions
+        </h1>
+        }
+
+        <p class="hero__description">
+            Analytics that makes it easy to get answers, make decisions, and show the impact of your product and
+            marketing
+            investments.
+        </p>
+
+        <div class="hero__buttons">
+            <a class="button button--primary" href="#" title="Start using the product for free">
+                Get Started Free
+            </a>
+            <a class="button button--primaryoutline" href="#" title="Request a product demo" (click)=" sendMessage()">
+                Get a Demo
+            </a>
+        </div>
+    </div>
+
+    <div class="hero__image">
+        <img class="image__fondo" src="./assets/images/gradiente_fondo.png"
+            alt="Background gradient effect representing data visualization">
+        <img class="image__principal" src="./assets/images/hero-image.ad9b08c2.webp"
+            alt="Product analytics dashboard with various graphs and charts">
+    </div>
+</section>

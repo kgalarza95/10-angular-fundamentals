@@ -1,0 +1,162 @@
+@use '../../ui/styles/variables.scss' as variables;
+@use '../../ui/styles/mixins.scss' as mixins;
+
+/*************************footer*************************/
+.footer {
+    background-color: variables.$background-color;
+    padding: 50px 0;
+
+    &__content {
+        display: flex;
+        justify-content: space-around;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    &__logo-section {
+        @include mixins.flex-commons(flex, flex-start);
+        flex-direction: column;
+        padding-left: 0;
+        flex: 1;
+    }
+
+    &__logo-container {
+        max-width: 140px;
+    }
+
+    &__logo {
+        display: block;
+        max-width: 100%;
+        height: auto;
+        height: 28px;
+    }
+
+    &__logo-text {
+        font-size: 1.1rem;
+        color: #626266;
+        margin-bottom: 20px;
+    }
+
+    &__column {
+        flex: 1;
+        margin-right: 10px;
+    }
+
+    &__column h3 {
+        margin-bottom: 10px;
+        color: #22242D;
+    }
+
+    &__column ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    &__column ul li {
+        margin-bottom: 8px;
+    }
+
+    &__column a {
+        text-decoration: none;
+        color: #22242D;
+    }
+
+
+    &__bottom {
+        @include mixins.flex-commons;
+        justify-content: space-between;
+        padding: 20px 0;
+        border-top: 1px solid #ddd;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    &__bottom-container {
+        @include mixins.flex-commons;
+    }
+
+    &__switch {
+        position: relative;
+        display: inline-block;
+        width: 40px;
+        height: 20px;
+        margin-right: 8px;
+    }
+
+    &__switch-input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+
+    &__switch-slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        @include mixins.transition(all);
+        border-radius: 20px;
+    }
+
+    &__switch-slider:before {
+        position: absolute;
+        content: "";
+        height: 14px;
+        width: 14px;
+        left: 3px;
+        bottom: 3px;
+        background-color: white;
+        @include mixins.transition(all);
+        border-radius: 50%;
+    }
+
+    &__switch-input:checked+&__switch-slider {
+        background-color: #4b2265;
+    }
+
+    &__switch-input:checked+&__switch-slider:before {
+        transform: translateX(20px);
+    }
+
+
+    &__switch-slider.round {
+        border-radius: 20px;
+    }
+
+    &__switch-slider.round:before {
+        border-radius: 50%;
+    }
+
+    &__reduced-motion {
+        color: #22242D;
+    }
+
+    &__copyright {
+        color: #22242D;
+        font-size: 0.8rem;
+    }
+
+    &__links {
+        font-size: 0.8rem;
+        display: flex;
+    }
+
+    &__links &__link {
+        text-decoration: none;
+        color: #22242D;
+    }
+
+    &__link {
+        font-size: 0.8rem;
+    }
+
+    &__separator {
+        padding: 0 5px;
+    }
+}
+
+
