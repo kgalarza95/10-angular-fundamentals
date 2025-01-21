@@ -1,0 +1,68 @@
+@use '../../../ui/styles/variables.scss' as variables;
+@use '../../../ui/styles/mixins.scss' as mixins;
+
+
+.section {
+    @include mixins.flex-commons(flex, left);
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 40px;
+    margin: 40px 0;
+
+    &__content {
+        margin-bottom: 20px;
+        flex: 1;
+        text-align: left;
+    }
+
+    &__title {
+        font-family: variables.$font-primary;
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+        font-weight: 500;
+        letter-spacing: 0.10em;
+        text-transform: uppercase;
+        color: #b094ff;
+    }
+
+    &__subtitle {
+        font-family: variables.$font-primary;
+        font-size: 4.5rem;
+        font-weight: 500;
+        margin-bottom: 20px;
+        color: variables.$text-color-light;
+    }
+
+    &__text {
+        font-size: 1.2rem;
+        font-weight: 400;
+        margin-bottom: 20px;
+        color: variables.$text-color-light;
+    }
+
+    &__image {
+        flex: 1;
+        text-align: center;
+        width: 100%;
+        border-radius: 24px;
+        overflow: hidden;
+        box-shadow: 0 0 10px 10px rgba(255, 255, 255, 0.34);
+        border: 30px solid variables.$primary-color;
+
+        .section__image-border {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            clip-path: inset(0px 0px 5px 0px);
+        }
+
+
+        &--solid {
+            box-shadow: none;
+            border: none;
+        }
+
+    }
+
+}

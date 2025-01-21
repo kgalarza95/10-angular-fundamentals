@@ -1,0 +1,35 @@
+.footer {
+
+    & a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    & a:visited {
+        color: inherit;
+    }
+
+    &__links {
+        font-size: 0.8rem;
+        display: flex;
+    }
+
+    &__links &__link {
+        text-decoration: none;
+        color: #22242D;
+    }
+
+    &__link {
+        font-size: 0.8rem;
+        text-decoration: none;
+        color: #22242D;
+    }
+
+
+}
+
+a:visited {
+    font-size: 0.8rem;
+    text-decoration: none;
+    color: #22242D;
+}

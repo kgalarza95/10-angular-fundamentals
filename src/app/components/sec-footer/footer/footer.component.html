@@ -1,108 +1,62 @@
-
-
 <footer class="footer">
     <div class="footer__content">
 
-        <!--  -->
 
         <app-footer-logo></app-footer-logo>
 
         <div class="footer__column">
             <h3 class="footer__heading">Platform</h3>
             <ul class="footer__list">
-                <li><a class="footer__link" href="#">Product Analytics</a></li>
-                <li><a class="footer__link" href="#">Warehouse Connectors</a></li>
-                <li><a class="footer__link" href="#">Session Replay</a></li>
-                <li><a class="footer__link" href="#">Integrations</a></li>
-                <li><a class="footer__link" href="#">Security & Privacy</a></li>
-                <li><a class="footer__link" href="#">Pricing</a></li>
+                <app-footer-column [items]="footerLinks"></app-footer-column>
             </ul>
             <h3 class="footer__heading">Use Cases</h3>
             <ul class="footer__list">
-                <li><a class="footer__link" href="#">Acquire New Users</a></li>
-                <li><a class="footer__link" href="#">Grow Your Users</a></li>
+                <app-footer-column [items]="footerLinks2"></app-footer-column>
             </ul>
         </div>
+
         <div class="footer__column">
             <h3 class="footer__heading">Teams</h3>
             <ul class="footer__list">
-                <li><a class="footer__link" href="#">Product</a></li>
-                <li><a class="footer__link" href="#">Data Analysts</a></li>
-                <li><a class="footer__link" href="#">Marketing</a></li>
-                <li><a class="footer__link" href="#">Engineering</a></li>
+                <app-footer-column [items]="footerLinks3"></app-footer-column>
             </ul>
             <h3 class="footer__heading">Industries</h3>
             <ul class="footer__list">
-                <li><a class="footer__link" href="#">Finance</a></li>
-                <li><a class="footer__link" href="#">Media & Entertainment</a></li>
-                <li><a class="footer__link" href="#">B2B</a></li>
-                <li><a class="footer__link" href="#">Ecommerce</a></li>
-                <li><a class="footer__link" href="#">Healthcare</a></li>
+                <app-footer-column [items]="footerLinks4"></app-footer-column>
             </ul>
             <h3 class="footer__heading">Business Size</h3>
             <ul class="footer__list">
                 <li><a class="footer__link" href="#">Enterprise</a></li>
             </ul>
         </div>
+
         <div class="footer__column">
             <h3 class="footer__heading">Resources</h3>
             <ul class="footer__list">
-                <li><a class="footer__link" href="#">Docs & Guides</a></li>
-                <li><a class="footer__link" href="#">Contact Support</a></li>
-                <li><a class="footer__link" href="#">What's New</a></li>
-                <li><a class="footer__link" href="#">Blog</a></li>
-                <li><a class="footer__link" href="#">Events & Webinars</a></li>
-                <li><a class="footer__link" href="#">Community</a></li>
-                <li><a class="footer__link" href="#">Customer Stories</a></li>
+                <app-footer-column [items]="footerLinks5"></app-footer-column>
             </ul>
             <h3 class="footer__heading">Company</h3>
             <ul class="footer__list">
-                <li><a class="footer__link" href="#">About Us</a></li>
-                <li><a class="footer__link" href="#">Become a Partner</a></li>
-                <li><a class="footer__link" href="#">Expert Directory</a></li>
-                <li><a class="footer__link" href="#">Careers</a></li>
-                <li><a class="footer__link" href="#">Contact Sales</a></li>
+                <app-footer-column [items]="footerLinks6"></app-footer-column>
             </ul>
         </div>
+
         <div class="footer__column">
             <h3 class="footer__heading">Templates</h3>
             <ul class="footer__list">
-                <li><a class="footer__link" href="#">Company KPIs</a></li>
-                <li><a class="footer__link" href="#">Feature Launch</a></li>
-                <li><a class="footer__link" href="#">Lifecycle Cohort Analysis</a></li>
-                <li><a class="footer__link" href="#">Ecommerce</a></li>
-                <li><a class="footer__link" href="#">Marketing KPIs</a></li>
-                <li><a class="footer__link" href="#">Web Analytics</a></li>
+
+                <app-footer-column [items]="footerLinks7"></app-footer-column>
+
             </ul>
             <h3 class="footer__heading">Compare Us</h3>
             <ul class="footer__list">
-                <li><a class="footer__link" href="#">Amplitude</a></li>
-                <li><a class="footer__link" href="#">Heap</a></li>
-                <li><a class="footer__link" href="#">Pendo</a></li>
-                <li><a class="footer__link" href="#">Google Analytics</a></li>
+
+                <app-footer-column [items]="footerLinks8"></app-footer-column>
+
             </ul>
         </div>
     </div>
 
-    <div class="footer__bottom">
-        <div class="footer__bottom-container">
-            <label class="footer__switch">
-                <input type="checkbox" class="footer__switch-input">
-                <span class="footer__switch-slider footer__switch-slider--round"></span>
-            </label>
-            <span class="footer__reduced-motion">Prefers reduced motion</span>
-        </div>
-        <div class="footer__copyright">
-            ©2024 Mixpanel. All rights reserved
-        </div>
-        <div class="footer__links">
-            <a class="footer__link" href="#">Legal</a>
-            <span class="footer__separator">•</span>
-            <a class="footer__link" href="#">Privacy Program</a>
-            <span class="footer__separator">•</span>
-            <a class="footer__link" href="#">Security</a>
-            <span class="footer__separator">•</span>
-            <a class="footer__link" href="#">Your Privacy Rights</a>
-        </div>
-    </div>
+    <app-footer-bottom></app-footer-bottom>
+
 </footer>

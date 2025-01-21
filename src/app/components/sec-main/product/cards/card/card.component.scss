@@ -1,0 +1,65 @@
+@use '../../../../ui/styles/variables.scss' as variables;
+@use '../../../../ui/styles/mixins.scss' as mixins;
+
+/*************************Sección de Cards*************************/
+.card {
+    flex: 1;
+    padding: 25px;
+    background: linear-gradient(179.86deg, hsla(0, 0%, 100%, .15) .12%, hsla(0, 0%, 100%, .063) 99.88%);
+    border-radius: 10px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, .25);
+    margin: 10px;
+    width: 25%;
+
+    &__icons {
+
+        @include mixins.flex-commons;
+        justify-content: flex-start;
+        gap: 40px;
+        margin-bottom: 20px;
+
+        .card__icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background-color: #e8ddff;
+            padding: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+    }
+
+
+    &__title {
+        font-size: 1.4rem;
+        color: white;
+        margin-bottom: 15px;
+        font-weight: 500;
+    }
+
+    &__text {
+        font-size: 1rem;
+        color: #dddada;
+        margin-bottom: 20px;
+        line-height: 1.5;
+    }
+
+    a {
+        text-decoration: none;
+        color: #dddada;
+        font-weight: 500;
+        margin-top: 10px;
+
+        &:hover img {
+            margin-left: 10px;
+        }
+
+    }
+
+    a img {
+        width: 20px;
+        height: auto;
+        margin-left: 5px;
+        display: inline-block;
+    }
+
+}

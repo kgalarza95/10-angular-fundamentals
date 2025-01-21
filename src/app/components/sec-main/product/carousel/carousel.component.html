@@ -1,0 +1,30 @@
+<div class="logos-carousel">
+
+    <div class="logos-carousel__row-carousel">
+        <div class="logos-carousel__container ">
+
+            @for (item of logosList; track $index) {
+            <div class="logos-carousel__logo-item"><span>{{item}}</span></div>
+            }
+
+        </div>
+    </div>
+    <div class="logos-row">
+        <div class="logos-carousel__container logos-carousel__container--inverse">
+
+            @for (item of logosList2; track $index) {
+            <div class="logos-carousel__logo-item"><span>{{item}}</span></div>
+            }
+
+        </div>
+    </div>
+    <div class="logos-row">
+        <div class="logos-carousel__container ">
+
+            @for (item of logosList3; track $index) {
+            <div class="logos-carousel__logo-item"><span>{{item}}</span></div>
+            }
+
+        </div>
+    </div>
+</div>

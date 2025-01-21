@@ -1,0 +1,26 @@
+@for (item of sectionItems(); track $index) {
+<section class="section">
+    <div class="section__content">
+        <h2 class="section__title">{{item.getTitle()}}</h2>
+        <h3 class="section__subtitle">{{item.getSubtitle()}}</h3>
+        <p class="section__text">{{item.getText()}}
+            @if (item.getText().length>0) {<span class="text-active">{{item.getTextStrong()}} </span>}
+            @if (item.getText2().length>0) { {{item.getText2()}}}
+        </p>
+
+
+        <button class="button button--primary">{{item.getTextButton()}}</button>
+    </div>
+    @if (item.getUrlVideo().length > 0) {
+
+    <div [ngClass]="{'section__image': true, 'section__image--solid': item.getIsSolid()}">
+        <video class="section__image-border" autoplay muted loop playsinline>
+            <source src="{{item.getUrlVideo()}}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    }
+
+</section>
+
+}

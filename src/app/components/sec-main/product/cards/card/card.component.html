@@ -1,0 +1,16 @@
+@for (item of cardsItems(); track $index) {
+<div class="card">
+    <div class="card__icons">
+        @for (icon of item.icons; track $index) {
+        <img class="card__icon" [src]="icon" alt="technology {{ $index }}" />
+        }
+    </div>
+    <h3 class="card__title">{{ item.title }}</h3>
+    <p class="card__text">{{ item.text }}</p>
+    <a [href]="item.link">
+        Learn More
+        <img class="card__icon" src="./assets/images/arrow-narrow-right.svg" />
+    </a>
+</div>
+}
+

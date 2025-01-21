@@ -7,34 +7,33 @@
             </a>
 
             <menu class="menu" role="menu">
-                <li class="menu-item--dropdown" role="menuitem">
-                    <a href="#" aria-haspopup="true" aria-expanded="false" tabindex="0">Platform2
-                        <i><img src="./assets/images/chevron.svg" alt="Chevron para Platform"></i>
+
+                @for (item of menuItems; track $index) {
+                <li class="menu__item menu-item--dropdown" role="menuitem" (mouseenter)="showSubmenu($index)"
+                    (mouseleave)="hideSubmenu($index)" [attr.data-index]="$index">
+                    <a href="#" aria-haspopup="true" aria-expanded="false" tabindex="{{$index}}">
+                        {{item.getName()}}
+                        <i><img [src]="item.getPathImg()" alt="{{item.getAlt()}}"></i>
                     </a>
                 </li>
-                <li class="menu-item--dropdown" role="menuitem">
-                    <a href="#" aria-haspopup="true" aria-expanded="false" tabindex="0">Solutions
-                        <i><img src="./assets/images/chevron.svg" alt="Chevron para Solutions"></i>
-                    </a>
-                </li>
-                <li class="menu-item--dropdown" role="menuitem">
-                    <a href="#" aria-haspopup="true" aria-expanded="false" tabindex="0">Resources
-                        <i><img src="./assets/images/chevron.svg" alt="Chevron para Resources"></i>
-                    </a>
-                </li> 
+                }
+
+
 
                 <app-submenu></app-submenu>
 
 
-                
                 <a href="#">Pricing</a>
             </menu>
         </div>
 
         <div class="navbar__actions">
-            <a class="button button--text" href="#" aria-label="Iniciar sesión">Login</a>
-            <a class="button button--outline" href="#" aria-label="Contactar ventas">Contact Sales</a>
-            <a class="button button--solid" href="#" aria-label="Empezar gratis">Get Started Free</a>
+            @for (button of buttons; track button.label) {
+            <a class="button" [class]="'button--' + button.type" [href]="button.href"
+                [attr.aria-label]="button.ariaLabel">
+                {{ button.label }}
+            </a>
+            }
         </div>
     </nav>
 </header>

@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Renderer2 } from '@angular/core';
 import { MenuItem } from '../util/menu_item';
-import { SubmenuComponent } from '../submenu/submenu.component';
+import { SubmenuComponent } from './submenu/submenu.component';
+import { Button } from '../util/Button';
 
 @Component({
   selector: 'app-header',
@@ -9,7 +10,7 @@ import { SubmenuComponent } from '../submenu/submenu.component';
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
 
   private imgChevron: string = './assets/images/chevron.svg';
 
@@ -17,40 +18,52 @@ export class HeaderComponent implements OnInit {
   new MenuItem('Solutions', this.imgChevron, 'Chevron for Solutions'),
   new MenuItem('Resources', this.imgChevron, 'Chevron for Resources'),];
 
-  ngOnInit() {
-    console.log('HeaderComponent initialized');
-    const menuItems = document.querySelectorAll<HTMLElement>('.menu-item--dropdown');
+  buttons: Button[] = [
+    {
+      label: 'Login',
+      href: '#',
+      type: 'text',
+      ariaLabel: 'Iniciar sesión',
+    },
+    {
+      label: 'Contact Sales',
+      href: '#',
+      type: 'outline',
+      ariaLabel: 'Contactar ventas',
+    },
+    {
+      label: 'Get Started Free',
+      href: '#',
+      type: 'solid',
+      ariaLabel: 'Empezar gratis',
+    },
+  ];
+
+
+
+  constructor(private renderer: Renderer2) { }
+
+
+  showSubmenu(index: number): void {
     const subMenus = document.querySelectorAll<HTMLElement>('.menu__submenu');
-
-    function showSubmenu(index: number) {
-      subMenus.forEach((submenu, i) => {
-        submenu.style.display = i === index ? 'block' : 'none';
-      });
-    }
-
-    menuItems.forEach((item, index) => {
-      item.addEventListener('mouseenter', () => {
-        showSubmenu(index);
-      });
-
-      item.addEventListener('mouseleave', () => {
-        setTimeout(() => {
-          if (!item.matches(':hover') && !subMenus[index]?.matches(':hover')) {
-            subMenus[index].style.display = 'none';
-          }
-        }, 300);
-      });
-    });
-
     subMenus.forEach((submenu) => {
-      submenu.addEventListener('mouseleave', () => {
-        setTimeout(() => {
-          const menuIndex = parseInt(submenu.getAttribute('data-submenu') || '0', 10);
-          if (!submenu.matches(':hover') && !menuItems[menuIndex]?.matches(':hover')) {
-            submenu.style.display = 'none';
-          }
-        }, 300);
-      });
+      const submenuIndex = parseInt(submenu.getAttribute('data-submenu') || '0', 10);
+      submenu.style.display = submenuIndex === index ? 'block' : 'none';
     });
+  }
+
+  hideSubmenu(index: number): void {
+    setTimeout(() => {
+      const menuItems = document.querySelectorAll<HTMLElement>('.menu-item--dropdown');
+      const subMenus = document.querySelectorAll<HTMLElement>('.menu__submenu');
+
+      if (!menuItems[index]?.matches(':hover') && !subMenus.item(index)?.matches(':hover')) {
+        subMenus.forEach((submenu) => {
+          const submenuIndex = parseInt(submenu.getAttribute('data-submenu') || '0', 10);
+          if (submenuIndex == index)
+            submenu.style.display = 'none';
+        });
+      }
+    }, 300);
   }
 }

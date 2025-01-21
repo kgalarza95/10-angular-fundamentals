@@ -36,7 +36,6 @@
 
 
 
-
 .menu {
     @include mixins.flex-commons;
     list-style: none;
@@ -53,84 +52,6 @@
         margin-left: 5px;
     }
 
-    &__submenu {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 15%;
-        background-color: variables.$text-color-light;
-        border-radius: 10px;
-        padding: 2rem;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        white-space: nowrap;
-        z-index: 100;
-        margin-top: 0.5rem;
-    }
-
-    &__submenu-container {
-        display: flex;
-        gap: 1rem;
-    }
-
-    &__submenu-column {
-        display: flex;
-        flex-direction: column;
-        gap: 0.5rem;
-    }
-
-    &__submenu-column--last {
-        width: 300px;
-        max-width: 300px;
-    }
-
-    &__submenu-title {
-        font-size: 1.1rem;
-        font-weight: 600;
-        color: variables.$letter-color;
-        margin-bottom: 0.5rem;
-        @include mixins.flex-commons;
-        gap: 0.5rem;
-    }
-
-    &__submenu-title img {
-        width: 1.1rem;
-        height: 1.1rem;
-    }
-
-    &__submenu a {
-        color: variables.$letter-color;
-        font-weight: 500;
-    }
-
-
-
-    &__submenu-item:hover {
-        background-color: #9966ff6a;
-        border-radius: 10px;
-    }
-
-
-    &__submenu a img {
-        width: 0.75rem;
-    }
-
-    &__submenu p {
-        margin: 0;
-        font-size: 0.8rem;
-        color: #667;
-    }
-
-
-
-    &__submenu h4 {
-        margin-bottom: 1rem;
-    }
-
-    &__submenu-image {
-        max-width: 100%;
-        height: auto;
-        margin-top: 1rem;
-    }
 
 }
 

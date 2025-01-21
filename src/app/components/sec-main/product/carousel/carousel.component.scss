@@ -1,0 +1,54 @@
+@use '../../../ui/styles/variables.scss' as variables;
+@use '../../../ui/styles/mixins.scss' as mixins;
+
+
+
+/*************************Sección de Carrusel*************************/
+.logos-carousel {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    overflow: hidden;
+
+    &__row-carousel {
+        overflow: hidden;
+    }
+
+    &__container {
+        display: flex;
+        animation: scroll 30s linear infinite;
+        white-space: nowrap;
+        margin-top: 10px;
+        width: 200%;
+    }
+
+    &__container--inverse {
+        animation-direction: reverse;
+    }
+
+    &__logo-item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-width: 250px;
+        min-height: 120px;
+        margin-bottom: 10px;
+        margin-left: 30px;
+        background-color: #281947;
+        border-radius: 15px;
+        color: variables.$background-color;
+        font-size: 2rem;
+        font-weight: bold;
+
+    }
+}
+
+@keyframes scroll {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(calc(-100% / 2));
+    }
+}

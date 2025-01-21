@@ -1,0 +1,61 @@
+@use '../../../ui/styles/variables.scss' as variables;
+@use '../../../ui/styles/mixins.scss' as mixins;
+
+
+
+/*************************Scroll section*************************/
+.scroll-section {
+    height: 100vh;
+    @include mixins.flex-commons;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+
+    &__title {
+        font-family: variables.$font-primary;
+        font-size: 4.5rem;
+        color: white;
+        text-align: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    &__question-box {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border-radius: 20px;
+        padding: 30px 60px;
+        margin-top: 60px;
+        min-width: 600px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    &__question-text {
+        font-family: variables.$font-primary;
+        font-size: 3rem;
+        color: white;
+        text-align: center;
+        margin: 0;
+        opacity: 1;
+    }
+
+    &__question-text--fade-out {
+        opacity: 0;
+    }
+
+    &__blocker {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 100;
+    }
+
+    &__blocker--disabled {
+        display: none;
+    }
+}

@@ -1,0 +1,36 @@
+@use '../../ui/styles/variables.scss' as variables;
+@use '../../ui/styles/mixins.scss' as mixins;
+
+.menu {
+
+    &__submenu-item a {
+        text-decoration: none;
+        color: variables.$letter-color;
+        margin-right: 30px;
+        @include mixins.flex-commons;
+    }
+
+    &__submenu-item:hover {
+        background-color: #9966ff6a;
+        border-radius: 10px;
+    }
+
+    &__submenu-item p {
+        margin: 0;
+        font-size: 0.8rem;
+        color: #667;
+    }
+
+}
+
+
+
+
+
+
+
+
+a:visited {
+    color: inherit;
+    text-decoration: none;
+}
