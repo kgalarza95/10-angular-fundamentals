@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "landingpage_angular": {
+    "website-bank-transaction": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/landingpage_angular",
+            "outputPath": "dist/website-bank-transaction",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -64,10 +64,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "landingpage_angular:build:production"
+              "buildTarget": "website-bank-transaction:build:production"
             },
             "development": {
-              "buildTarget": "landingpage_angular:build:development"
+              "buildTarget": "website-bank-transaction:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -98,8 +98,5 @@
         }
       }
     }
-  },
-  "cli": {
-    "analytics": false
   }
 }

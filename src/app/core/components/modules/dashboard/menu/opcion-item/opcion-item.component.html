@@ -1,0 +1,4 @@
+<a class="mlateral__menu-nav-link" [routerLink]="item()?.routerLink" (click)="setActiveMenu(item()?.activeMenu)">
+    <i [class]="item()?.iconClass"></i>
+    {{ item()?.label }}
+</a>

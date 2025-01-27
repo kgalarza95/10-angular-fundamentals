@@ -1,0 +1,69 @@
+<div class="user-crud">
+    <div class="user-crud__header">
+        <h2 class="user-crud__title">Lista de Áreas</h2>
+        <div class="user-crud__actions">
+            <button class="user-crud__add-button">
+                <i class="fas fa-plus"></i> Agregar Nuevo
+            </button>
+        </div>
+    </div>
+
+</div>
+
+<app-container>
+
+    <app-dynamic-table [data]="data" [columns]="columns">
+    </app-dynamic-table>
+
+    <!-- 1. Uso básico:-->
+    <app-input-float label="Nombre de usuario" [(ngModel)]="username"></app-input-float>
+
+    <!--3. Con tipo de input específico: -->
+    <app-input-float label="Contraseña" type="password" [(ngModel)]="password"></app-input-float>
+    <!--4. Con icono al inicio: -->
+    <app-input-float label="Usuario" startIcon="fas fa-user" [(ngModel)]="usuario"></app-input-float>
+    <!--5. Con icono al final: -->
+    <app-input-float label="Buscar" endIcon="fas fa-search" [(ngModel)]="busqueda"></app-input-float>
+    <!--6. Con icono al inicio y al final: -->
+    <app-input-float label="Fecha" startIcon="fas fa-calendar" endIcon="fas fa-times"
+        [(ngModel)]="fecha"></app-input-float>
+
+    <!-- validador-->
+    <app-input-float label="Teléfono" [(ngModel)]="telefono" (blur)="validarTelefono()"
+        [error]="telefonoError"></app-input-float>
+
+    <app-select [options]="options" placeholder="Selecciona un país" [(selectedValue)]="selectedCountry">
+    </app-select>
+
+    <button (click)="obtenerValor()">Obtener Valor</button>
+
+    <app-button text="Guardar" icon="fas fa-save" [style]="'solid'" color="primary" (onClick)="guardar()"></app-button>
+    <app-button text="Cancelar" [style]="'outlined'" (onClick)="cancelar()"></app-button>
+    <app-button text="Enviar" type="submit" [size]="'large'" [disabled]="true"></app-button>
+
+
+    <app-button text="abrirDialogo" icon="fas fa-save" [style]="'solid'" color="primary"
+        (onClick)="abrirDialogo()"></app-button>
+
+    <app-dialog [visible]="showDialog" title="Título del diálogo" (close)="showDialog = false" [width]="'500px'">
+        <p>Este es el contenido del diálogo. Puedes poner cualquier cosa aquí.</p>
+        <app-button text="Guardar" icon="fas fa-save" [style]="'solid'" color="primary"
+            (onClick)="guardar()"></app-button>
+    </app-dialog>
+
+    <app-input-float label="Dirección" placeholder="Introduce tu dirección" startIcon="fas fa-map-marker-alt"
+        [(ngModel)]="direccion" error="La dirección es obligatoria"></app-input-float>
+
+    <!-- <button (click)="openDialog()">Abrir Dialogo</button> -->
+    <app-confirmation-dialog [isOpen]="isDialogOpen" [message]="'Are you sure you want to delete this item?'"
+        (confirm)="onConfirmDelete()" (cancel)="onCancelDelete()">
+    </app-confirmation-dialog>
+
+    <button (click)="openDialog()">Delete Item</button>
+
+
+
+    <app-notification />
+
+
+</app-container>

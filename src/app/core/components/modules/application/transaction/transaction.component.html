@@ -1,0 +1,41 @@
+<app-container>
+
+    <section>
+        <label for="cuenta" class="select-label">Select an account:</label>
+        <app-select id="cuenta" [options]="options" placeholder="Select an Account"
+            [(selectedValue)]="selectedValuePredefine" (selectedValueChange)="onAccountChange($event)"></app-select>
+    </section>
+
+
+    <div class="saldo-panel">
+        <h3 class="saldo-panel__header">Available Balance</h3>
+        <p class="saldo-panel__amount">{{ saldo | currency }}</p>
+    </div>
+
+    <div class="transaccion-container">
+        <div class="transaccion-card" *ngFor="let action of transactionActions">
+            <h4 class="transaccion-card__header">{{ action.name }}</h4>
+            <input class="transaccion-card__input" type="number" [(ngModel)]="action.amount"
+                placeholder="Ingrese el monto">
+            <span class="transaccion-card__cost">Costo: {{ action.cost | currency }}</span>
+
+            <app-button text="Make Transaction" [style]="'solid'" color="primary"
+                (onClick)="performTransaction(action)">
+            </app-button>
+        </div>
+    </div>
+
+    <div class="historial">
+        <h4 class="historial__header">Transaction History</h4>
+    </div>
+
+    <app-dynamic-table [data]="data" [columns]="columns" [showEditButton]="false" [showInfButton]="false"
+        [showDeleteButton]="false">
+    </app-dynamic-table>
+</app-container>
+
+<app-notification />
+
+<app-confirmation-dialog [isOpen]="isDialogOpen" [message]="'Are you sure you want to continue?'"
+    (confirm)="onConfirm()" (cancel)="onCancel()">
+</app-confirmation-dialog>

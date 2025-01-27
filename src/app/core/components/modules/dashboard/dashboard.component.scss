@@ -1,0 +1,44 @@
+
+.dashboard {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+
+
+    &--menu-open {
+        .dashboard__menu {
+            transform: translateX(0);
+        }
+    }
+
+    &__menu {
+        width: 200px;
+        background-color: #1a2337;
+        color: #fff;
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        overflow-y: auto;
+        transition: transform 0.3s ease-in-out;
+        transform: translateX(-100%);
+    }
+
+    &__content {
+        flex: 1;
+        background-color: #f1f5f9;
+        display: flex;
+        flex-direction: column;
+        overflow-y: auto;
+    }
+
+    &__header {
+        padding: 1rem;
+        background-color: #fff;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+
+    &__main {
+        flex: 1;
+        padding: 1rem;
+    }
+}

@@ -1,0 +1,14 @@
+<div class="dashboard" [class.dashboard--menu-open]="menuOpen">
+    <aside #menuRef class="dashboard__menu">
+        <app-menu></app-menu>
+    </aside>
+
+    <div class="dashboard__content">
+        <header class="dashboard__header">
+            <app-navbar (toggleMenuOut)="toggleMenu()" />
+        </header>
+        <main class="dashboard__main">
+            <router-outlet></router-outlet>
+        </main>
+    </div>
+</div>
